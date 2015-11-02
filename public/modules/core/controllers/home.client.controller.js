@@ -44,7 +44,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             self.selected = angular.isNumber(user) ? $scope.users[user] : user;
             self.toggleList();
         }
- 
+
         /**
          * Show the bottom sheet
          */
@@ -88,6 +88,16 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         self.selectUser   = selectUser;
         self.toggleList   = toggleUsersList;
         self.share        = share;
+        self.pages = [
+                        {name: 'Home', url: 'home.html'},
+                        {name: 'Book', url: 'book.html'},
+                        {name: 'Overview', url: 'overview.html'},
+                        {name: 'Booking history', url: 'booking_history.html'},
+                        {name: 'Shop', url: 'shop.html'},
+                        {name: 'Cart', url: 'cart.html'},
+                        {name: 'logout', url: 'logout.html'}
+                    ];
+        self.currentPage = self.pages[0];
  
     }
 ]);

@@ -10,8 +10,8 @@ angular.module(ApplicationConfiguration.applicationModuleName).config([
         $locationProvider.hashPrefix('!');
  
         $mdThemingProvider.theme('default')
-            .primaryPalette('purple')
-            .accentPalette('red');
+            .primaryPalette('teal')
+            .accentPalette('amber');
  
         // Register the user `avatar` icons
         $mdIconProvider

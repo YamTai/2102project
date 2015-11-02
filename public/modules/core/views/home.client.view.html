@@ -1,62 +1,86 @@
+<script>document.write('<base href="' + document.location + '" />');</script>
 <div flex layout="row" data-ng-controller="HomeController as ul">
  
     <!-- Container #3 Left -->
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
-class="md-whiteframe-z2">
+    class="md-whiteframe-z2" id="mainMenu">
         <md-list>
-            <md-list-item ng-repeat="it in ul.users">
-                <md-button ng-click="ul.selectUser(it)"
-                           ng-class="{'selected' : it === ul.selected }">
-                    <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-                    {{it.name}}
+            <md-list-item ng-repeat="page in ul.pages">
+
+                <md-button ng-click="ul.currentPage = page; ul.toggleList()" 
+                    ng-class="{'selected' : page.name == ul.currentPage.name }">
+                    {{page.name}}
                 </md-button>
             </md-list-item>
         </md-list>
     </md-sidenav>
 
- <div ng-cloak class="tabsdemoDynamicHeight" style="width: 100%">
-    <md-content>
-        <md-tabs md-dynamic-height  md-border-bottom md-stretch-tabs="always">
+    <div ng-cloak class="tabsdemoDynamicHeight" style="width: 100%">
+        <md-content>
+            <md-tabs md-dynamic-height  md-border-bottom md-stretch-tabs="always">
 
-            <md-tab label="Details">
-                <md-content class="md-padding" id="content">
+                <md-tab label="Details">
+                    <md-content class="md-padding" id="content">
 
-                    <!-- Container #4 Right -->
-                    <!--<md-content flex id="content">-->
-                        <!-- User details sample -->
-                    <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
-                    <h2>{{ul.selected.name}}</h2>
-                    <p>{{ul.selected.content}}</p>
-             		
-                    <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
-                        <md-icon md-svg-icon="share" ></md-icon>
-                    </md-button>
+                        <div ng-include="ul.currentPage.url"></div>
 
-                </md-content> 
-            </md-tab>
+                    </md-content> 
+                </md-tab>
 
-            <md-tab label="Contact Info">
-                <md-content class="md-padding" id="content">
+                <md-tab label="Contact Info">
+                    <md-content class="md-padding" id="content">
 
-                    <h2>{{ul.selected.name}}</h2>
-                    <br>
-
-                    <div ng-show ="ul.selected.home">
+                        <h2>{{ul.selected.name}}</h2>
                         <br>
-                        <p class = "md-display-1">{{ul.selected.home}}</p>
-                        <p class = "md-subhead">Home</p>
-                    </div>
 
-                    <div ng-show = "ul.selected.mobile">
-                        <br>
-                        <p class = "md-display-1">{{ul.selected.mobile}}</p>
-                        <p class = "md-subhead">Mobile</p>
-                    </div>
+                        <div ng-show ="ul.selected.home">
+                            <br>
+                            <p class = "md-display-1">{{ul.selected.home}}</p>
+                            <p class = "md-subhead">Home</p>
+                        </div>
+
+                        <div ng-show = "ul.selected.mobile">
+                            <br>
+                            <p class = "md-display-1">{{ul.selected.mobile}}</p>
+                            <p class = "md-subhead">Mobile</p>
+                        </div>
                     
-                </md-content> 
-            </md-tab>
+                    </md-content> 
+                </md-tab>
 
-        </md-tabs>
-    </md-content>
+            </md-tabs>
+        </md-content>
 
+    </div>
 </div>
+
+
+<!--apparently ng-include does not work with other html files when run locally, have to be coded inline-->
+
+<script type="text/ng-template" id="home.html">
+    <h1>Home page here.</h1>
+</script>
+
+<script type="text/ng-template" id="book.html">
+    <h1>Booking page here.</h1>
+</script>
+
+<script type="text/ng-template" id="overview.html">
+    <h1>Overview page here.</h1>
+</script>
+
+<script type="text/ng-template" id="booking_history.html">
+    <h1>Booking history page here.</h1>
+</script>
+
+<script type="text/ng-template" id="shop.html">
+    <h1>Shopping page here.</h1>
+</script>
+
+<script type="text/ng-template" id="cart.html">
+    <h1>Shopping cart page here.</h1>
+</script>
+
+<script type="text/ng-template" id="logout.html">
+    <h1>Log out page here.</h1>
+</script>
