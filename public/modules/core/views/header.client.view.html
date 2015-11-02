@@ -1,8 +1,10 @@
 <div data-ng-controller="HeaderController" flex>
-    <md-toolbar layout="row" data-ng-controller="HomeController as ul">
-        <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
-            <md-icon md-svg-icon="menu"></md-icon>
-        </md-button>
+    <div class="navbar navbar-header">
         <h1>Material Design App</h1>
-    </md-toolbar>
+        <md-toolbar layout="row" data-ng-controller="HomeController as ul">
+            <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+                <md-icon md-svg-icon="menu"></md-icon>
+            </md-button>
+        </md-toolbar>
+    </div>
 </div>
