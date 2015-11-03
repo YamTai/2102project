@@ -1,4 +1,5 @@
 <div data-ng-controller="HeaderController" flex>
+<<<<<<< HEAD
     <div class="navbar navbar-header">
         <h1>Material Design App</h1>
         <md-toolbar layout="row" data-ng-controller="HomeController as ul">
@@ -7,4 +8,12 @@
             </md-button>
         </md-toolbar>
     </div>
+=======
+    <md-toolbar layout="row" data-ng-controller="HomeController as ul">
+        <md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+            <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <h1>{{ul.currentPage.name}}</h1>
+    </md-toolbar>
+>>>>>>> YamTai/master
 </div>

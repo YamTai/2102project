@@ -130,6 +130,17 @@ span.name {
 }
 
 
+/*top menu bar*/
+
+/*md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color: #607D8B;
+    color: #FFFFFF;
+}
+*/
+#mainMenu{
+  padding-top: 20px;
+}
+
 /*contacts tabs*/
 .tabsdemoDynamicHeight md-content {
   background-color: transparent !important;
