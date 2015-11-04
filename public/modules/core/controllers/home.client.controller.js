@@ -5,7 +5,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     function($scope, Authentication, usersService, $mdSidenav, $mdBottomSheet, $log) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
- 
+        
  
         /**
          * Main Controller for the Angular Material Starter App
@@ -13,8 +13,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
          * @param $mdSidenav
          * @param avatarsService
          * @constructor
-         */
- 
+         */ 
  
         // Load all registered users
  
@@ -80,6 +79,12 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
  
  
         }
+
+
+        /*map*/
+
+
+        
  
         var self = this;
  
@@ -88,7 +93,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         self.selectUser   = selectUser;
         self.toggleList   = toggleUsersList;
         self.share        = share;
-        self.pages = [
+        self.menuItems = [
                         {name: 'Home', url: 'home.html'},
                         {name: 'Book', url: 'book.html'},
                         {name: 'Overview', url: 'overview.html'},
@@ -97,7 +102,10 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                         {name: 'Cart', url: 'cart.html'},
                         {name: 'logout', url: 'logout.html'}
                     ];
-        self.currentPage = self.pages[0];
+        self.pages = [
+                        {name: '', url: '#.html'}
+                    ];
+        self.currentPage = self.menuItems[0];
  
     }
 ]);
