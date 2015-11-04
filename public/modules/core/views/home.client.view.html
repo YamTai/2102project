@@ -8,7 +8,7 @@
         <md-list>
             <md-list-item ng-repeat="menuItem in ul.menuItems">
 
-                <md-button ng-click="ul.currentPage = menuItem; ul.toggleList()" 
+                <md-button data-ng-href="{{menuItem.url}}" ng-click="ul.currentPage = menuItem; ul.toggleList()" 
                     ng-class="{'selected' : menuItem.name == ul.currentPage.name }">
                     {{menuItem.name}}
                 </md-button>
@@ -20,7 +20,7 @@
         
                     <md-content class="md-padding" id="content">
 
-                        <div ng-include="ul.currentPage.url"></div>
+                        <div ng-include="home.html"></div>
 
                     </md-content> 
 

@@ -98,7 +98,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                         {name: 'Book', url: 'book.html'},
                         {name: 'Overview', url: 'overview.html'},
                         {name: 'Booking history', url: 'booking_history.html'},
-                        {name: 'Shop', url: 'shop.html'},
+                        {name: 'Shop', url: '#!/shoppings'},
                         {name: 'Cart', url: 'cart.html'},
                         {name: 'logout', url: 'logout.html'}
                     ];
