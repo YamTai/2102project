@@ -10,7 +10,8 @@ angular.module('shoppings').controller('ShoppingsController', ['$scope', '$state
 			// Create new Shopping object
 			var shopping = new Shoppings ({
 				name: this.name,
-				content: this.content
+				description: this.description,
+				image: this.image
 			});
 
 			// Redirect after save
