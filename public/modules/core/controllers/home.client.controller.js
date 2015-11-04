@@ -5,7 +5,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     function($scope, Authentication, usersService, $mdSidenav, $mdBottomSheet, $log) {
         // This provides Authentication context.
         $scope.authentication = Authentication;
- 
+        
  
         /**
          * Main Controller for the Angular Material Starter App
@@ -13,8 +13,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
          * @param $mdSidenav
          * @param avatarsService
          * @constructor
-         */
- 
+         */ 
  
         // Load all registered users
  
@@ -80,6 +79,12 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
  
  
         }
+
+
+        /*map*/
+
+
+        
  
         var self = this;
  
@@ -88,16 +93,31 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         self.selectUser   = selectUser;
         self.toggleList   = toggleUsersList;
         self.share        = share;
+<<<<<<< HEAD
         self.pages = [
+=======
+        self.menuItems = [
+>>>>>>> YamTai/master
                         {name: 'Home', url: 'home.html'},
                         {name: 'Book', url: 'book.html'},
                         {name: 'Overview', url: 'overview.html'},
                         {name: 'Booking history', url: 'booking_history.html'},
+<<<<<<< HEAD
                         {name: 'Shop', url: 'shop.html'},
                         {name: 'Cart', url: 'cart.html'},
                         {name: 'logout', url: 'logout.html'}
                     ];
         self.currentPage = self.pages[0];
+=======
+                        {name: 'Shop', url: '#!/shoppings'},
+                        {name: 'Cart', url: 'cart.html'},
+                        {name: 'logout', url: 'logout.html'}
+                    ];
+        self.pages = [
+                        {name: '', url: '#.html'}
+                    ];
+        self.currentPage = self.menuItems[0];
+>>>>>>> YamTai/master
  
     }
 ]);

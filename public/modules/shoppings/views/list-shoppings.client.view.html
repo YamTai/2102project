@@ -1,9 +1,24 @@
+<div data-ng-controller="HomeController as ul">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+    class="md-whiteframe-z2" style="padding-top: 20px">
+        <md-list>
+            <md-list-item ng-repeat="menuItem in ul.menuItems">
+
+                <md-button ng-click="ul.currentPage = menuItem; ul.toggleList()" 
+                    ng-class="{'selected' : menuItem.name == ul.currentPage.name }">
+                    {{menuItem.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+</div>
+
 <section data-ng-controller="ShoppingsController" data-ng-init="find()">
     <div class="page-header">
         <h1>Shoppings</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="shopping in shoppings" data-ng-href="#!/shoppings/{{shopping._id}}" class="list-group-item">
+        <a data-ng-repeat="shopping in shoppings" data-ng-href="/#!/shoppings/{{shopping._id}}" class="list-group-item">
 			<small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="shopping.created | date:'medium'"></span>
@@ -11,7 +26,7 @@
 				<span data-ng-bind="shopping.user.displayName"></span>
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="shopping.name"></h4>
-        </a>
+        <!-- </a> -->
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!shoppings.$resolved || shoppings.length">
     	No Shoppings yet, why don't you <a href="/#!/shoppings/create">create one</a>?

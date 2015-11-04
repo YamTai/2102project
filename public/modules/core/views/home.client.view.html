@@ -1,8 +1,13 @@
 <script>document.write('<base href="' + document.location + '" />');</script>
+<<<<<<< HEAD
+=======
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+>>>>>>> YamTai/master
 <div flex layout="row" data-ng-controller="HomeController as ul">
  
     <!-- Container #3 Left -->
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+<<<<<<< HEAD
     class="md-whiteframe-z2" id="mainMenu">
         <md-list>
             <md-list-item ng-repeat="page in ul.pages">
@@ -10,11 +15,21 @@
                 <md-button ng-click="ul.currentPage = page; ul.toggleList()" 
                     ng-class="{'selected' : page.name == ul.currentPage.name }">
                     {{page.name}}
+=======
+    class="md-whiteframe-z2" style="padding-top: 20px">
+        <md-list>
+            <md-list-item ng-repeat="menuItem in ul.menuItems">
+
+                <md-button data-ng-href="{{menuItem.url}}" ng-click="ul.currentPage = menuItem; ul.toggleList()" 
+                    ng-class="{'selected' : menuItem.name == ul.currentPage.name }">
+                    {{menuItem.name}}
+>>>>>>> YamTai/master
                 </md-button>
             </md-list-item>
         </md-list>
     </md-sidenav>
 
+<<<<<<< HEAD
     <div ng-cloak class="tabsdemoDynamicHeight" style="width: 100%">
         <md-content>
             <md-tabs md-dynamic-height  md-border-bottom md-stretch-tabs="always">
@@ -50,6 +65,15 @@
 
             </md-tabs>
         </md-content>
+=======
+    <div ng-cloak style="width: 100%">
+        
+                    <md-content class="md-padding" id="content">
+
+                        <div ng-include="home.html"></div>
+
+                    </md-content> 
+>>>>>>> YamTai/master
 
     </div>
 </div>
@@ -57,12 +81,112 @@
 
 <!--apparently ng-include does not work with other html files when run locally, have to be coded inline-->
 
+<<<<<<< HEAD
 <script type="text/ng-template" id="home.html">
     <h1>Home page here.</h1>
+=======
+<script type="text/ng-template" style="width: 100%" id="home.html">
+
+    <div layout="row" style="padding-top: 20px">
+            <md-card flex="66">
+                <md-card-content>
+                    <h2>Overview</h2>
+                    <md-card flex style="background-color: #e0f2f1">
+                            <md-card-content>
+                                driver0
+                            </md-card-content>
+                        </md-card>
+                </md-card-content>
+            </md-card>
+
+        <div flex="33">
+            <md-button class="md-fab " style="width:140px; height:140px; margin-left: 15%" ng-click="ul.currentPage = ul.menuItems[1]"><a md-display-1>Book</a>
+            </md-button>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 20px;">
+        <md-card>
+            <md-card-content>
+
+                <h2>History</h2>
+
+                <div layout="row">
+                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                        <md-card-content>
+                            driver1
+                        </md-card-content>
+                    </md-card>
+                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                        <md-card-content>
+                            driver2
+                        </md-card-content>
+                    </md-card>
+                </div>
+
+                <div layout="row">
+
+                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                        <md-card-content>
+                            driver3
+                        </md-card-content>
+                    </md-card>
+
+                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                        <md-card-content>
+                            driver4
+                        </md-card-content>
+                    </md-card>
+
+                </div>
+
+            </md-card-content>
+        </md-card>
+    </div>
+
+    <div class="row" style="padding-top: 20px;">
+        <md-card>
+            <md-card-content>
+
+                <h2>Shop</h2>
+
+                <div layout="row">
+
+                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                        <md-card-content>
+                            driver1
+                        </md-card-content>
+                    </md-card>
+
+                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                        <md-card-content>
+                            driver2
+                        </md-card-content>
+                    </md-card>
+
+                </div>
+
+            </md-card-content>
+
+        </md-card>
+    </div>
+
+>>>>>>> YamTai/master
 </script>
 
 <script type="text/ng-template" id="book.html">
     <h1>Booking page here.</h1>
+<<<<<<< HEAD
+=======
+    <html ng-app="mapApp">
+
+<body>
+<div ng-controller="MapController">
+ <div id="map"></div>
+
+</body>
+</html>
+>>>>>>> YamTai/master
 </script>
 
 <script type="text/ng-template" id="overview.html">
