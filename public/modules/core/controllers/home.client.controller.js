@@ -94,8 +94,8 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         self.toggleList   = toggleUsersList;
         self.share        = share;
         self.menuItems = [
-                        {name: 'Home', url: 'home.html'},
-                        {name: 'Book', url: 'book.html'},
+                        {name: 'Home', url: '#!/'},
+                        {name: 'Book', url: '#!/books'},
                         {name: 'Overview', url: 'overview.html'},
                         {name: 'Booking history', url: 'booking_history.html'},
                         {name: 'Shop', url: '#!/shoppings'},

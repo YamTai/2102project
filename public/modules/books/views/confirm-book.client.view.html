@@ -1,0 +1,23 @@
+
+<div data-ng-controller="HomeController as ul" layout = "row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+    class="md-whiteframe-z2" style="padding-top: 20px">
+        <md-list>
+            <md-list-item ng-repeat="menuItem in ul.menuItems">
+
+                <md-button data-ng-href="{{menuItem.url}}" ng-click="ul.currentPage = menuItem; ul.toggleList()" 
+                    ng-class="{'selected' : menuItem.name == ul.currentPage.name }">
+                    {{menuItem.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <section data-ng-controller="ShoppingsController" data-ng-init="findOne()">
+        <div class="page-header">
+            <h1>confirmed</h1>
+            <h1 data-ng-bind="book.current_location"></h1>
+            <h4 data-ng-bind="book.destination"></h4>
+        </div>  
+    </section>
+</div>

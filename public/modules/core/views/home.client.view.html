@@ -1,8 +1,6 @@
-<script>document.write('<base href="' + document.location + '" />');</script>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
 <div flex layout="row" data-ng-controller="HomeController as ul">
- 
-    <!-- Container #3 Left -->
+
+    <!-- Nav Bar -->
     <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
     class="md-whiteframe-z2" style="padding-top: 20px">
         <md-list>
@@ -18,134 +16,93 @@
 
     <div ng-cloak style="width: 100%">
         
-                    <md-content class="md-padding" id="content">
+        <md-content class="md-padding" id="content">
 
-                        <div ng-include="home.html"></div>
+            <div layout="row" style="padding-top: 20px">
+                    <md-card flex="66">
+                        <md-card-content>
+                            <h2>Overview</h2>
+                            <md-card flex style="background-color: #e0f2f1">
+                                    <md-card-content>
+                                        driver0
+                                    </md-card-content>
+                                </md-card>
+                        </md-card-content>
+                    </md-card>
 
-                    </md-content> 
+                <div flex="33">
+                    <md-button class="md-fab " style="width:140px; height:140px; margin-left: 15%" data-ng-href="#!/books"><a md-display-1>Book</a>
+                    </md-button>
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px;">
+                <md-card>
+                    <md-card-content>
+
+                        <h2>History</h2>
+
+                        <div layout="row">
+                            <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                                <md-card-content>
+                                    driver1
+                                </md-card-content>
+                            </md-card>
+                            <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                                <md-card-content>
+                                    driver2
+                                </md-card-content>
+                            </md-card>
+                        </div>
+
+                        <div layout="row">
+
+                            <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                                <md-card-content>
+                                    driver3
+                                </md-card-content>
+                            </md-card>
+
+                            <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                                <md-card-content>
+                                    driver4
+                                </md-card-content>
+                            </md-card>
+
+                        </div>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="row" style="padding-top: 20px;">
+                <md-card>
+                    <md-card-content>
+
+                        <h2>Shop</h2>
+
+                        <div layout="row">
+
+                            <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                                <md-card-content>
+                                    driver1
+                                </md-card-content>
+                            </md-card>
+
+                            <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
+                                <md-card-content>
+                                    driver2
+                                </md-card-content>
+                            </md-card>
+
+                        </div>
+
+                    </md-card-content>
+
+                </md-card>
+            </div>
+
+        </md-content> 
 
     </div>
 </div>
-
-
-<!--apparently ng-include does not work with other html files when run locally, have to be coded inline-->
-
-<script type="text/ng-template" style="width: 100%" id="home.html">
-
-    <div layout="row" style="padding-top: 20px">
-            <md-card flex="66">
-                <md-card-content>
-                    <h2>Overview</h2>
-                    <md-card flex style="background-color: #e0f2f1">
-                            <md-card-content>
-                                driver0
-                            </md-card-content>
-                        </md-card>
-                </md-card-content>
-            </md-card>
-
-        <div flex="33">
-            <md-button class="md-fab " style="width:140px; height:140px; margin-left: 15%" ng-click="ul.currentPage = ul.menuItems[1]"><a md-display-1>Book</a>
-            </md-button>
-        </div>
-    </div>
-
-    <div class="row" style="padding-top: 20px;">
-        <md-card>
-            <md-card-content>
-
-                <h2>History</h2>
-
-                <div layout="row">
-                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
-                        <md-card-content>
-                            driver1
-                        </md-card-content>
-                    </md-card>
-                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
-                        <md-card-content>
-                            driver2
-                        </md-card-content>
-                    </md-card>
-                </div>
-
-                <div layout="row">
-
-                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
-                        <md-card-content>
-                            driver3
-                        </md-card-content>
-                    </md-card>
-
-                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
-                        <md-card-content>
-                            driver4
-                        </md-card-content>
-                    </md-card>
-
-                </div>
-
-            </md-card-content>
-        </md-card>
-    </div>
-
-    <div class="row" style="padding-top: 20px;">
-        <md-card>
-            <md-card-content>
-
-                <h2>Shop</h2>
-
-                <div layout="row">
-
-                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
-                        <md-card-content>
-                            driver1
-                        </md-card-content>
-                    </md-card>
-
-                    <md-card flex="45" style="margin-left:3%; background-color: #e0f2f1">
-                        <md-card-content>
-                            driver2
-                        </md-card-content>
-                    </md-card>
-
-                </div>
-
-            </md-card-content>
-
-        </md-card>
-    </div>
-
-</script>
-
-<script type="text/ng-template" id="book.html">
-    <h1>Booking page here.</h1>
-    <html ng-app="mapApp">
-
-<body>
-<div ng-controller="MapController">
- <div id="map"></div>
-
-</body>
-</html>
-</script>
-
-<script type="text/ng-template" id="overview.html">
-    <h1>Overview page here.</h1>
-</script>
-
-<script type="text/ng-template" id="booking_history.html">
-    <h1>Booking history page here.</h1>
-</script>
-
-<script type="text/ng-template" id="shop.html">
-    <h1>Shopping page here.</h1>
-</script>
-
-<script type="text/ng-template" id="cart.html">
-    <h1>Shopping cart page here.</h1>
-</script>
-
-<script type="text/ng-template" id="logout.html">
-    <h1>Log out page here.</h1>
-</script>

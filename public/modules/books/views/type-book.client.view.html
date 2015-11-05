@@ -1,0 +1,54 @@
+
+<div data-ng-controller="HomeController as ul" layout = "row" flex>
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+    class="md-whiteframe-z2" style="padding-top: 20px">
+        <md-list>
+            <md-list-item ng-repeat="menuItem in ul.menuItems">
+
+                <md-button data-ng-href="{{menuItem.url}}" ng-click="ul.currentPage = menuItem; ul.toggleList()" 
+                    ng-class="{'selected' : menuItem.name == ul.currentPage.name }">
+                    {{menuItem.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <section data-ng-controller="BooksController" width="100%" flex>
+        <div class="page-header">
+            <h1>Taxi Type</h1>
+
+            <div layout="row">
+	            <md-card flex-offset="5" flex="40">
+	            	<md-card-content>
+	            		<img flex-offset="5" ng-src="modules\books\img\regular_taxi.png" style="width: 90%;">
+	            		<h3 style="text-align: center">Regular</h3>
+	            	</md-card-content>
+	            </md-card>
+	            <md-card flex-offset="10" flex="40">
+	            	<md-card-content>
+	            		<img flex-offset="5" ng-src="modules\books\img\regular_taxi.png" style="width: 90%;">
+	            	</md-card-content>
+	            </md-card>
+	        </div>
+
+	        <div layout="row">
+	            <md-card flex-offset="5" flex="40">
+	            	<md-card-content>
+	            		<img flex-offset="5" ng-src="modules\books\img\regular_taxi.png" style="width: 90%;">
+	            	</md-card-content>
+	            </md-card>
+	            <md-card flex-offset="10" flex="40">
+	            	<md-card-content>
+	            		<img flex-offset="5" ng-src="modules\books\img\regular_taxi.png" style="width: 90%;">
+	            	</md-card-content>
+	            </md-card>
+	        </div>
+
+	        <div layout="row" width="100%" style="padding-top: 20px">
+	            <div flex="25"></div>
+	            <md-button flex="20" class="md-raised" data-ng-href="#!/">Back</md-button>
+	            <div flex="10"></div>
+	            <md-button flex="20"class="md-accent md-raised md-hue-1" data-ng-href="#!/books/confirm">Confirm</md-button>
+        	</div>
+    </section>
+</div>
