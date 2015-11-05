@@ -73,7 +73,6 @@ exports.delete = function(req, res) {
  * List of Shoppings
  */
 exports.list = function(req, res) { 
-	
 	Shopping.find().sort('-created').populate('user', 'displayName').exec(function(err, shoppings) {
 		if (err) {
 			return res.status(400).send({
