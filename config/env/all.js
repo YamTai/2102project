@@ -29,6 +29,8 @@ module.exports = {
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
 				'public/lib/angular-aria/angular-aria.js',
 				'public/lib/angular-material/angular-material.js',
+				'public/lib/ngmap/build/scripts/ng-map.min.js'
+
 			]
 		},
 		css: [
