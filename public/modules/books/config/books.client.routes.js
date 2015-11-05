@@ -16,10 +16,10 @@ angular.module('books').config(['$stateProvider',
 		state('viewBook', {
 			url: '/books/TaxiType',
 			templateUrl: 'modules/books/views/type-book.client.view.html'
-		// }).
-		// state('editBook', {
-		// 	url: '/books/:bookId',
-		// 	templateUrl: 'modules/books/views/edit-book.client.view.html'
+		}).
+		state('editBook', {
+			url: '/books/:bookId',
+			templateUrl: 'modules/books/views/edit-book.client.view.html'
 		});
 	}
 ]);
