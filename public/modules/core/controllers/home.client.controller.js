@@ -93,11 +93,27 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         self.selectUser   = selectUser;
         self.toggleList   = toggleUsersList;
         self.share        = share;
+<<<<<<< HEAD
+        self.pages = [
+=======
         self.menuItems = [
+<<<<<<< HEAD
                         {name: 'Home', url: '#!/'},
                         {name: 'Book', url: '#!/books'},
+=======
+>>>>>>> YamTai/master
+                        {name: 'Home', url: 'home.html'},
+                        {name: 'Book', url: 'book.html'},
+>>>>>>> e4d9619144c70fb4fa14a81398c2d040e28ef151
                         {name: 'Overview', url: 'overview.html'},
                         {name: 'Booking history', url: 'booking_history.html'},
+<<<<<<< HEAD
+                        {name: 'Shop', url: 'shop.html'},
+                        {name: 'Cart', url: 'cart.html'},
+                        {name: 'logout', url: 'logout.html'}
+                    ];
+        self.currentPage = self.pages[0];
+=======
                         {name: 'Shop', url: '#!/shoppings'},
                         {name: 'Cart', url: 'cart.html'},
                         {name: 'logout', url: 'logout.html'}
@@ -106,6 +122,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                         {name: '', url: '#.html'}
                     ];
         self.currentPage = self.menuItems[0];
+>>>>>>> YamTai/master
  
     }
 ]);

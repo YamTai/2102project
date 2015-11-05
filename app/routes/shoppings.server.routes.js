@@ -7,10 +7,12 @@ module.exports = function(app) {
 	// Shoppings Routes
 	app.route('/shoppings')
 		.get(shoppings.list)
-		.post(users.requiresLogin, shoppings.create);
+		.post(shoppings.create);
+		//.post(users.requiresLogin, shoppings.create);
 
 	app.route('/shoppings/:shoppingId')
 		.get(shoppings.read)
+		//.put(shoppings.update)
 		.put(users.requiresLogin, shoppings.hasAuthorization, shoppings.update)
 		.delete(users.requiresLogin, shoppings.hasAuthorization, shoppings.delete);
 
