@@ -1,17 +1,22 @@
 'use strict';
 
 // Shoppings controller
-angular.module('shoppings').controller('ShoppingsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Shoppings',
-	function($scope, $stateParams, $location, Authentication, Shoppings) {
+angular.module('shoppings').controller('ShoppingsController', ['$scope', '$stateParams', '$location', '$window', 'Authentication', 'Shoppings',
+	function($scope, $stateParams, $location, $window, Authentication, Shoppings) {
 		$scope.authentication = Authentication;
 
+		$scope.infor = 'Your taxi has arrived';
+		$scope.doPopup = function(infor){
+			$window.alert(infor);
+		};
 		// Create new Shopping
 		$scope.create = function() {
 			// Create new Shopping object
 			var shopping = new Shoppings ({
 				name: this.name,
 				description: this.description,
-				image: this.image
+				image: this.image,
+				price: this.price
 			});
 
 			// Redirect after save

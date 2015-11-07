@@ -28,6 +28,12 @@ var ShoppingSchema = new Schema({
 		required: 'Please fill Shopping image',
 		trim: true
 	},
+	price: {
+		type: String,
+		default: '',
+		required: 'Please fill Shopping item price',
+		trim: true
+	},
 	created: {
 		type: Date,
 		default: Date.now

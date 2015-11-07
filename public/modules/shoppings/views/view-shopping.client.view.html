@@ -1,4 +1,4 @@
-<section data-ng-controller="ShoppingsController" data-ng-init="findOne()">
+<!-- <section data-ng-controller="ShoppingsController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="shopping.name"></h1>
 		<h4 data-ng-bind="shopping.description"></h4>
@@ -20,4 +20,82 @@
 			<span data-ng-bind="shopping.user.displayName"></span>
 		</em>
 	</small>
-</section>
+</section> -->
+
+<div data-ng-controller="HomeController as ul" layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
+    class="md-whiteframe-z2" style="padding-top: 20px">
+        <md-list>
+            <md-list-item ng-repeat="menuItem in ul.menuItems">
+
+                <md-button data-ng-href="{{menuItem.url}}" ng-click="ul.currentPage = menuItem; ul.toggleList()" 
+                    ng-class="{'selected' : menuItem.name == ul.currentPage.name }">
+                    {{menuItem.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+		
+	    <div class="single-product-area" data-ng-controller="ShoppingsController" data-ng-init="findOne()">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+
+                
+		<div class="col-md-8">
+			<div class="product-content-right">                       
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="product-images">
+							<div class="product-main-img">
+								<img ng-src="{{shopping.image}}">
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-6">
+						<div class="product-inner">
+							<h2 class="product-name" data-ng-bind="shopping.name"></h2>
+							<h3 class="product-inner-price">
+								<ins data-ng-bind="shopping.price"></ins>
+							</h3>    
+							
+							<form ng-submit="" class="cart">
+								<div class="quantity">
+									<input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" max="5" step="1">
+								</div>
+								<button ng-click="doPopup(infor)" class="add_to_cart_button">Add to cart</button>
+
+							</form>   
+							
+							
+							<div role="tabpanel">
+								<ul class="product-tab" role="tablist">
+									<li role="presentation" class="active"><a aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+								</ul>
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane fade in active" id="home">
+										<h2>Product Description</h2>  
+										<p data-ng-bind="shopping.description"></p>
+
+									
+									</div>
+
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+                        
+                        
+
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+</div>
+	

@@ -12,26 +12,45 @@
         </md-list>
     </md-sidenav>
 
-    <section data-ng-controller="ShoppingsController" data-ng-init="find()" flex>
-        <div class="page-header">
+    <section data-ng-controller="ShoppingsController" data-ng-init="find()" class="team" flex>
+	        
+	   <div class="page-header">
             <h1>Shoppings</h1>
         </div>
-        <div class="list-group">
-            <a data-ng-repeat="shopping in shoppings" data-ng-href="/#!/shoppings/{{shopping._id}}" class="list-group-item">
-                <small class="list-group-item-text">
-                    Posted on
-                    <span data-ng-bind="shopping.created | date:'medium'"></span>
-                    by
-                    <span data-ng-bind="shopping.user.displayName"></span>
-                </small>
-                <h4 class="list-group-item-heading" data-ng-bind="shopping.name"></h4>
-                <img ng-src="{{shopping.image}}"</img>
-            </a>
-        </div>
-        <div class="alert alert-warning text-center" data-ng-hide="!shoppings.$resolved || shoppings.length">
-            No Shoppings yet, why don't you <a href="/#!/shoppings/create">create one</a>?
-        </div>
+		<div class="container-fluid">  
+		<div class="row">
+				<div class="col-md-6" data-ng-repeat="shopping in shoppings" >
+<!-- 					<div class="team-item">	           
+	            		<img  ng-src="{{shopping.image}}">
+	            		<h3 style="text-align: center" data-ng-bind="shopping.name"></h3>
+						<a type = "button" class = "btn btn-primary btn-lg pull-right" data-ng-href="#!/shoppings/{{shopping._id}}">Add to cart</a>
+	            
+					</div> -->
+	            <md-card flex-offset="5" flex="80">
+	            	<md-card-content>
+	            		<img flex-offset="5" ng-src="{{shopping.image}}" style="width: 90%;">
+	            		<h3 style="text-align: center" data-ng-bind="shopping.name"></h3>
+						<a type = "button" class = "btn btn-primary btn-lg pull-right" data-ng-href="#!/shoppings/{{shopping._id}}">View Details</a>
+	            	</md-card-content>
+	            </md-card>
+				</div>
+		</div>
+		</div>
     </section>
+	
+<!-- <div class="card-deck-wrapper" data-ng-controller="ShoppingsController" data-ng-init="find()">
+  <div class="card-deck">
+  <a data-ng-repeat="shopping in shoppings" data-ng-href="/#!/shoppings/{{shopping._id}}">
+    <div class="card">
+      <img class="card-img-top" ng-src="{{shopping.image}}">
+      <div class="card-block">
+        <h4 class="card-title" data-ng-bind="shopping.name"></h4>
+      </div>
+    </div>
+	</a>
+
+  </div>
+</div>	 -->
 
 </div>
 
