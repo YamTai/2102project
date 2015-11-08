@@ -66,62 +66,44 @@ angular.module('books').controller('BooksController',['$scope', '$stateParams', 
 		};
 
 		/*google maps*/
+		var map;
+		var geocoder = new google.maps.Geocoder();
+		var infowindow = new google.maps.InfoWindow();
 
-		//function MapController($scope) {
-		// $scope.loadMap = function(){
-  //   		$scope.message = 'Displaying a Google Map';
-  //   		console.log('running...');
+		$scope.$on('mapInitialized', function(evt, evtMap) {
+			map = evtMap;
+			$scope.placeMarker = function(e) {
+				var latlng = e.latLng;
+				var marker = new google.maps.Marker({position: latlng, map: map});
+				map.panTo(latlng);
+				var lat = latlng.lat();
+				var lng = latlng.lng();
+				var latlngStr = {lat: parseFloat(lat), lng: parseFloat(lng)};
+				console.log(latlngStr);
+				geocoder.geocode({'location': latlngStr}, function(results, status) {
+	    			if (status === google.maps.GeocoderStatus.OK) {
+						if (results[1]) {
+							console.log(results[1].formatted_address);
+							infowindow.setContent(results[1].formatted_address);
+							infowindow.open(map, marker);
+						}
+	      			}
+				});
+				angular.element('des').value = results[1].formatted_address;
+			}
+		});
 
-  //   		var mapOptions = {
-  //                 zoom: 10,
-  //                 center: new google.maps.LatLng(1.3,103.8),
-  //                 mapTypeId: google.maps.MapTypeId.ROADMAP
-  //             };
-
-		// 	$scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-		// 	var geocoder = new google.maps.Geocoder();
-		// 	$scope.markers = [];
-		// 	$scope.routes = [];
-
-		// 	$scope.search = function (address1,address2) {
-		// 		codeAddress(address1);
-  // 				codeAddress(address2);
-  // 			};
-
-  // 			var codeAddress = 
-  // 							function (info){
-		// 			  			geocoder.geocode( {'address': info},
-		// 						function(results, status){
-		// 							if (status === google.maps.GeocoderStatus.OK){
-		// 					            $scope.coordinate = results[0].geometry.location;
-		// 					            $scope.map.setCenter(results[0].geometry.location);
-
-		// 					            var marker = new google.maps.Marker(
-		// 					            	{map: $scope.map, position: results[0].geometry.location});
-
-		// 					            $scope.markers.push(marker);
-
-  //         								var route = new google.maps.LatLng(         
-		// 					            	results[0].geometry.location.lat(),
-		// 					            	results[0].geometry.location.lng());
-
-  //         								$scope.routes.push(route);
-  //         							}
-  //         						});
-		// 			  		};
-
-		// 	$scope.showLine = function (){
-		// 		$scope.path1 = new google.maps.Polyline(
-  //   			{
-		// 			path: $scope.routes,
-		// 			strokeColor: '#FF0000',
-		// 			strokeOpacity: 1.0,
-		// 			strokeWeight: 2
-  //   			});
-
-  //   			$scope.path1.setMap($scope.map);
-  //   		};		  
-		// };/*end of google maps*/
+		$scope.showLocation = function (location) {
+			geocoder.geocode( {'address':location}, function(results, status){
+				if (status == google.maps.GeocoderStatus.OK){
+		            var value = results[0].geometry.location;
+		            $scope.map.setCenter(value);
+		            var marker = new google.maps.Marker({position: value, map: map});
+					map.panTo(value);
+					map.setZoom(15);
+		        }
+		    })
+		};
+	/*end of google maps*/
 	}
 ]);
