@@ -1,5 +1,5 @@
 2 main functions of the app: Choosing type of taxi, Shopping
-1) save the project into local drive directory
+1) save the project into local drive directory, check that you have the "node_modules" folder..
 2) using command prompt, change the directory to the place where the folder is being saved at
 3) issue 'grunt' command
 4) After 'grunting' from the command prompt, user is being brought to the Home Page
