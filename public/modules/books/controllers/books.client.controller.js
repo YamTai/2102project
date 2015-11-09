@@ -69,7 +69,7 @@ angular.module('books').controller('BooksController',['$scope', '$stateParams', 
 		var map;
 		var geocoder = new google.maps.Geocoder();
 		var infowindow = new google.maps.InfoWindow();
-
+		$scope.destination = "des";
 		$scope.$on('mapInitialized', function(evt, evtMap) {
 			map = evtMap;
 			$scope.placeMarker = function(e) {
@@ -89,7 +89,8 @@ angular.module('books').controller('BooksController',['$scope', '$stateParams', 
 						}
 	      			}
 				});
-				angular.element('des').value = results[1].formatted_address;
+				console.log(results[1].formatted_address);
+				// $scope.destination.$modelValue = "not working";
 			}
 		});
 
